@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+    Recommendations for Future Developers:
+* make sure the 3D models work constistently, needs to be hosted
+* Play with the styles and redesign
+* Make sure to keep it sccalable when adding more.
+-->
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Imagine If You Will Listings</title>
+	<link rel="icon" href="images/transparent.png" type="image/png">
+    <link rel="stylesheet" href="ListingStyles.css">
+    <link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine|Allison|Molle|Playfair Display|Cutive Mono|Cormorant Garamond">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  </head>
+  <body>
+    <header>
+      <nav class="sitenavigation">
+        <ul>
+          <li class="navlogo"><a href="index.html"><img class="homelogo" src="images/transparent.png"></img></a></li>
+		  <li class="transparent-title" id="transparent"></li>
+		  <li class="sitetitle"><a href="index.html">Imagine If You Will</a></li>
+		</ul>
+      </nav> 
+    </header>
+	
+	<div class="listing-options-container">
+		<div class="camp-1">
+			<div class="picture-holder-1"><img class="image-1" src="SP/images/backgroundImage-1.jpg" alt="Small Stream Society Camp"></div>
+			<div class="camp-description-1"><p id="description-1"><b id="title-1">Small Stream Society</b><br /><br /> Located just 40 miles from Glass City, our Christian camp is an amazing 
+			place for kids to have a blast and grow spiritually. Surrounded by nature, we offer inspiring activities and 
+			experiences to deepen faith while learning about Christian community</p></div>
+			<div class="section-buttons-1"><a class="b-1">VIEW MODEL</a><a class="b-2" href="SP/SSSPage.html" target="blank">VISIT CAMP</a></div>
+			
+			<div class="model-view-1">
+				<button class="close">X</button>
+				<button class="exterior">Exterior</button>
+				<button class="interior">Interior</button>
+				<!--p id="link-hover"><a id="link" href="https://modelviewer.dev/editor/view/?id=95291918677783580000" target="blank">Loading too long?</a></p>-->
+				<div class="exterior-building">
+					<iframe src="https://modelviewer.dev/editor/view/?id=95763239991980200000" 
+					style="width: 100%; height: 100%; border: none;"></iframe>
+				</div>
+				<div class="interior-building">
+					<iframe src="https://modelviewer.dev/editor/view/?id=95291918677783580000" 
+					style="width: 100%; height: 100%; border: none;"></iframe>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="camp-2">
+		
+			<div class="picture-holder-2"><img class="image-2" src="SP/images/backgroundImage-2.png" alt="Coming Soon"></div>
+			<div class="camp-description-2"><p id="description-2"><b id="title-1">Earl of Westminster Manor</b><br /><br />Currently In Development</p></div>
+			<div class="section-buttons-2"><a class="b-3">VIEW MODEL</a><a class="b-4" target="blank">In Development</a></div>
+		</div>
+		
+		<div class="camp-3">
+		
+			<div class="picture-holder-3"><img class="image-3" src="SP/images/backgroundImage-3.png" alt="Coming Soon"></div>
+			<div class="camp-description-3"><p id="description-3"><b id="title-1">Henry Mitchell Ministry Center</b><br /><br />Currently In Development</p></div>
+			<div class="section-buttons-3"><a class="b-5">VIEW MODEL</a><a class="b-6" target="blank">In Development</a></div>
+		</div>
+	
+	</div>
+	
+	<footer>
+		<div><a class="footer-contents">Imagine If You Will</a></div>
+		<a href="https://www.instagram.com/"><img class="insta" src="images/instaw.png"></img></a>
+		<a href="https://www.facebook.com/"><img class="facebook" src="images/fb.png"></img></a>
+		<div><a class="aboutus" href="aboutus.html">About our team!</a></div>
+    </footer>
+	
+  <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+<script>
+	$(document).ready(function() 
+	{
+		var activeView = null; // Initialize a variable to keep track of the active view
+
+		$('.b-1').click(function() {
+			if (activeView === null) 
+			{ // Check if no active view is currently open
+				$('.model-view-1').addClass('active'); // Show active view
+				$('.exterior').addClass('active'); // Show active view
+				$('.exterior-building').addClass('active'); // Show active view
+				$('body').addClass('freeze-scroll');
+				
+				activeView = $('.model-view-1'); // Update the active view variable
+			}
+		});
+		
+		$('.interior').click(function() {
+			$('.interior').addClass('active'); // Show active view
+			$('.interior-building').addClass('active'); // Show active view
+			
+			$('.exterior').removeClass('active');
+			$('.exterior-building').removeClass('active'); // Show active view
+		});
+		
+		$('.exterior').click(function() {
+			$('.exterior').addClass('active'); // Show active view
+			$('.exterior-building').addClass('active'); // Show active view
+			
+			$('.interior').removeClass('active');
+			$('.interior-building').removeClass('active'); // Show active view
+		});
+
+		$('.close').click(function() 
+		{
+			$('.model-view-1').removeClass('active'); // Hide active view
+			$('.interior').removeClass('active');
+			$('body').removeClass('freeze-scroll');
+			activeView = null; // Reset the active view variable
+		});
+	});
+  </script>
+  
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.querySelector('.3d-model').appendChild(renderer.domElement);
+
+    const loader = new THREE.GLTFLoader();
+    loader.load('building.glb', function (gltf) {
+        scene.add(gltf.scene);
+    });
+
+    camera.position.z = 5;
+
+    function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+    }
+    animate();
+</script> 
+  </body>
+ 
+</html>

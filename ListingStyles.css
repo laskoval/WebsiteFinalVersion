@@ -1,0 +1,300 @@
+
+/************************************	Listings Page Styles	************************************/
+
+.listing-options-container
+{
+	margin: 35px 25px 35px 25px; /* Top, Right, Bottom, Left*/
+}
+
+/*.SSSCamp, .example-one, .example-two
+.camp-1, .camp-2, .camp-3*/
+[class^="camp-"]
+{
+	display: flex;
+	height: 250px;
+	margin: 25px;
+	
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 12px;
+	gap: 10px;
+}
+
+/************************************	Picture Box	************************************/
+[class^="picture-holder-"]
+{
+	margin: 20px;
+	height: 205px;
+	width: 30%;
+	border-radius: 12px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+[class^="image-"]
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 12px;
+}
+
+/************************************	Description Box	************************************/
+
+[class^="camp-description-"]
+{
+	margin: 20px;
+	height: 205px;
+	width: 33%;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 12px;
+}
+
+
+[id^="title-"]
+{
+	font-size: 30px;
+}
+
+[id^="description-"]
+{
+	padding: 0px 15px 0px 15px;
+	font-size: 20px;
+}
+
+
+/************************************	Buttons	************************************/
+[class^="section-buttons-"]
+{
+	gap: 35px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+	height: 205px;
+	width: 28%;
+	color: black;
+}
+
+[class^="section-buttons-"] a
+{
+	padding: 20px;
+	border-radius: 40px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+	text-decoration: none;
+	
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+}
+
+[class^="b-"]
+{
+	color: black;
+}
+
+[class^="b-"]:hover
+{
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+[class^="section-buttons-"]:visited {
+   color: black;
+}
+
+[class^="section-buttons-"]:focus {
+   color: black;
+}
+
+
+/************************************	Model View Background	************************************/
+
+[class^="model-view-"]
+{
+    position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 12px;
+    padding: 20px;
+    display: none;
+	height: 600px;
+	width: 900px;
+    z-index: 200;
+	
+}
+
+[class^="model-view-"].active
+{
+    display: block;
+	
+}
+
+.exterior.active
+{
+	background-color: red;
+}
+.exterior-building
+{
+	display: none;
+}
+
+.exterior-building.active
+{
+	display: block;
+	height: 600px;
+	width: 900px;
+}
+
+.interior.active
+{
+	background-color: red;
+}
+.interior-building
+{
+	display: none;
+}
+
+.interior-building.active
+{
+	display: block;
+	height: 600px;
+	width: 900px;
+}
+
+.exterior, .interior
+{
+	position: block;
+	top: 25px;
+	left: 25px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 10px;
+	font-size: 25px;
+	padding: 5px 10px;
+	color: white;
+	
+	border: transparent;
+	background-color: rgba(0,0,0, 0.7);
+	margin-bottom: 10px;
+}
+.close
+{
+	position: absolute;
+	top: 20px;
+	right: 25px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 10px;
+	font-size: 25px;
+	padding: 5px 10px;
+	color: white;
+	
+	border: transparent;
+	background-color: rgba(0,0,0, 0.7);
+}
+
+.close:hover
+{
+	color: white;
+	background-color: red;
+	border: transparent;
+}
+
+/************************************	Site Scalability	************************************/
+
+@media only screen and (max-width: 1300px) 
+{
+	[id^="title-"]
+	{
+		font-size: 25px;
+	}
+	
+	[id^="description-"] {
+		font-size: 16px;
+    }
+	
+	[class^="model-view-"]
+	{
+		height: 600px;
+		width: 700px;
+	}
+	.interior-building.active, .exterior-building.active
+	{
+		width: 100%;
+		height: 100%;
+	}
+
+}
+
+@media only screen and (max-width: 1000px) {
+    [class^="camp-"] {
+        height: auto; /* Remove fixed height */
+        flex-direction: column;
+		align-items: center;
+		justify-content: center;
+    }
+
+    [class^="picture-holder-"],
+    [class^="camp-description-"] {
+        width: 90%; /* Adjust width to full for stacking */
+        margin: 25px 15px 0px 15px; /* Adjust margin for stacking */
+    }
+
+    [class^="image-"] {
+        height: 100%; /* Maintain aspect ratio */
+    }
+	
+	[class^="section-buttons-"]
+	{
+		height: auto;
+		width: auto;
+		padding: 10px;
+	}
+	
+	[class^="model-view-"]
+	{
+		height: 400px;
+		width: 500px;
+	}
+}
+
+@media only screen and (max-width: 550px) 
+{
+	[class^="model-view-"]
+	{
+		height: 500px;
+		width: 325px;
+	}
+}
+
+
+/*	When map is active, blocks scrolling	*/
+body.freeze-scroll {	
+  overflow: hidden;
+}
+
+
+
+#link
+{
+	margin-top: 20px;
+	border-radius: 12px;
+	border: transparent;
+	background-color: rgba(255,255,255, 0.7);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	height: 40px;
+	width: 120px;
+	text-decoration: none;
+	
+	font-size: 20px;
+	padding: 15px;
+
+}
+
+

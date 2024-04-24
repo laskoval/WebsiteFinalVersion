@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quiz</title>
+	<link rel="icon" href="images/logoSSS.png" type="image/png">
+	<link rel="stylesheet" href="quiz-styles.css">
+	<!--<link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine|Allison|Molle|Playfair Display|Cutive Mono">  -->
+ </head>
+	<body>
+	<header>
+	</header>
+	
+	<form>
+		<!-- This section is for the start page to where it will be shown to the user when they click on the "Staff Quiz".
+		This will display to enter a name, a go back to home page button, and a start button to start the quiz -->
+		<fieldset class="Starter-Page">
+			<legend><div class="legend-background">Preparing Quiz</div></legend>
+			<label id="form-begin-text">Once you begin the quiz, you must finish it before exiting!</label>
+			<div class="input-group">
+				<label for="name" id="name-label">Name:</label>
+					<input id="name" type="text" name="name" placeholder="First and Last Name">
+			</div>
+			<div class="button-group">
+				<p id="starter-home-hover"><a id="starter-home" href="SSSPage.html">Return Home</a></p>
+				<input id="begin-button" type="button" value="Begin" onclick="return validateForm()">
+			</div>
+		</fieldset>
+		<!-- It is repeat through out this line of code for each question.Every fieldset id the same as the last.-->
+		<fieldset class="question-1">
+
+			<!-- Underneath is the question number and the question that is being asked to the user.-->
+			<legend class="q-1">1. In the middle of the night, you hear a loud thud coming from one of the rooms. 
+			As you check the room, you see one of the campers face down on the floor. What do you do?</legend>
+				<div class="picture-container-1"><img class="image-one" src="images/quizPic-1.png"></div>
+			
+			<!-- These are the set of answers that go with the question above. Every label is a answer under each question-->
+			<label id="a-1" for="option-1">
+				<input type="radio" id="option-1" name="answer" value="a1" class="w-1">
+				Walk away from camper		
+			</label>
+			
+			<label id="a-2" for="option-2">
+				  <input type="radio" id="option-2" name="answer" value="a2" class="correct-1">
+				  Quickly check on the camper, then follow incident/accident procedures		
+			</label>
+			
+			<label id="a-3" for="option-3">
+				  <input type="radio" id="option-3" name="answer" value="a3" class="w-2">
+				  Check on the other campers, then check on him		
+			</label>
+			
+			<label id="a-4" for="option-4">
+				  <input type="radio" id="option-4" name="answer" value="a4" class="w-3">
+				  Go get another counselor to do it for you		
+			</label>
+				<input id="next-button" type="button" value="Next" onclick="validateAnswer1()">
+		</fieldset>
+		
+		
+		<fieldset class="question-2">
+			<legend class="q-2">2. You have a camper that comes up to you and says they left their inhaler in the room at the cabin.
+				You are at an activity that is at least a 15 minute walk from the location of the inhaler.. What will you do?</legend>
+				<div class="picture-container-2"><img class="image-two" src="images/quizPic-2.png"></div>
+			<label id="a-5" for="option-5">
+				<input type="radio" id="option-5" name="answer" value="a5" class="correct-2">
+				Leave the camper with staff members and you go retrieve the inhaler		
+			</label>
+			
+			<label id="a-6" for="option-6">
+				  <input type="radio" id="option-6" name="answer" value="a6">
+				Ignore the camper's request and continue with the activity		
+			</label>
+			
+			<label id="a-7" for="option-7">
+				  <input type="radio" id="option-7" name="answer" value="a7">
+				  Tell the camper to go back to their room alone	
+			</label>
+			
+			<label id="a-8" for="option-8">
+				  <input type="radio" id="option-8" name="answer" value="a8">
+				  Let camper know they have to wait until the activity is over		
+			</label>
+				<input id="next-button" type="button" value="Next" onclick="validateAnswer2()">
+		</fieldset>
+		
+		
+		<fieldset class="question-3">
+			<legend class="q-3">3. What actions would you take if you had a camper who was displaying 
+			inappropriate behavior at the dining room table, such as running around, playing, and annoying others at multiple tables?</legend>
+				<div class="picture-container-3"><img class="image-three" src="images/activityCamp3.jpg"></div>
+			<label id="a-9" for="option-9">
+				<input type="radio" id="option-9" name="answer" value="a9">
+				Make excuses for the camper's poor manners rather than addressing the issue directly		
+			</label>
+			
+			<label id="a-10" for="option-10">
+				  <input type="radio" id="option-10" name="answer" value="a10">
+				  Blame others or external factors for the camper's lack of table manners	
+			</label>
+			
+			<label id="a-11" for="option-11">
+				  <input type="radio" id="option-11" name="answer" value="a11" class="correct-3">
+				  Implement consequences for continued poor behavior, such as a temporary loss of fun activity		
+			</label>
+			
+			<label id="a-12" for="option-12">
+				  <input type="radio" id="option-12" name="answer" value="a12">
+				  Criticize the camper harshly or use negative language to address the issue		
+			</label></div>
+				<input id="next-button" type="button" value="Next" onclick="validateAnswer3()">
+		</fieldset>
+		
+		<fieldset class="question-4">
+			<legend class="q-4">4. Which option is incorrect for managing a cooking or other type of campfire?</legend>
+			<div class="picture-container-4"><img class="image-four" src="images/activityCamp16.jpg"></div>
+			<label id="a-13" for="option-13">
+				<input type="radio" id="option-13" name="answer" value="a13">
+				Use only established fire rings
+			</label>
+			
+			<label id="a-14" for="option-14">
+				  <input type="radio" id="option-14" name="answer" value="a14">
+				  Keep the fire small so that there are no high flames(3 foot maximum)		
+			</label>
+			
+			<label id="a-15" for="option-15">
+				  <input type="radio" id="option-15" name="answer" value="a15">
+				  Use dead wood for your fire and never cut down live trees or branches		
+			</label>
+			
+			<label id="a-16" for="option-16">
+				  <input type="radio" id="option-16" name="answer" value="a16" class="correct-4">
+				  Start a campfire during windy conditions, using a large amount of accelerant		
+			</label>
+				<input id="next-button" type="button" value="Next" onclick="validateAnswer4()">
+		</fieldset>
+		
+		<fieldset class="question-5">
+			<legend class="q-5">5. If a camper says they're not feeling well, what actions would you take?</legend>
+			<div class="picture-container-5"><img class="image-five" src="images/quizPic-5.jpg"></div>
+			<label id="a-17" for="option-17">
+				<input type="radio" id="option-17" name="answer" value="a17">
+				Allow the camper to continue participating in camp activities after assessment with restrictions
+			</label>
+			
+			<label id="a-18" for="option-18">
+				  <input type="radio" id="option-18" name="answer" value="a18">
+				  Ignore the camper's complaint and assume it will resolve on its own		
+			</label>
+			
+			<label id="a-19" for="option-19">
+				  <input type="radio" id="option-19" name="answer" value="a19" class="correct-5">
+				  Have the camper and a buddy report to the Camp Nurse or Health Director		
+			</label>
+			
+			<label id="a-20" for="option-20">
+				  <input type="radio" id="option-20" name="answer" value="a20">
+				  Delay seeking medical attention or assistance for the camper		
+			</label>
+				<input id="next-button" type="button" value="Next" onclick="validateAnswer5()">
+		</fieldset>
+		
+		<fieldset class="question-6">
+			<legend class="q-6">6. You have taken the campers outside to do an activity. 
+			As you are done and about to walk back to the Dining Hall, you do a head count 
+			and notice one of the campers are missing. What do you do?</legend>
+			<div class="picture-container-6"><img class="image-six" src="images/quizPic-6.jpg"></div>
+				
+			<label id="a-21" for="option-21">
+				<input type="radio" id="option-21" name="answer" value="a21">
+				Disregard the missing camper and proceed with the group back to the Dining Hall
+			</label>
+			
+			<label id="a-22" for="option-22">
+				  <input type="radio" id="option-22" name="answer" value="a22">
+				  Leave the rest of the group unattended while you search for the missing camper	
+			</label>
+			
+			<label id="a-23" for="option-23">
+				  <input type="radio" id="option-23" name="answer" value="a23">
+				  Assume the camper will find their own way back to the Dining Hall without assistance		
+			</label>
+			
+			<label id="a-24" for="option-24">
+				  <input type="radio" id="option-24" name="answer" value="a24" class="correct-6">
+				  Notify your supervisor immediately. That person will then implement the next step in the policies regarding a missing camper	
+			</label>
+				<input id="next-button" type="button" value="Next" onclick="validateAnswer6()">
+		</fieldset>
+		
+		<fieldset class="question-7">
+			<legend class="q-7">7. Which answer(s) would be inappropriate for you to handle a camper who says they miss home?</legend>
+			<div class="picture-container-7"><img class="image-seven" src="images/quizPic-7.png"></div>
+			<label id="a-25" for="option-25">
+				<input type="radio" id="option-25" name="answer" value="a25" class="correct-7">
+				Use your phone to call or text camper parents
+			</label>
+			
+			<label id="a-26" for="option-26">
+				  <input type="radio" id="option-26" name="answer" value="a26">
+				  Remind the camper that they are here just “x” number more days and will go after doing fun activities		
+			</label>
+			
+			<label id="a-27" for="option-27">
+				  <input type="radio" id="option-27" name="answer" value="a27">
+				  Stay awake till campers are all asleep, the camper will feel comforted that you are awake too		
+			</label>
+			
+			<label id="a-28" for="option-28">
+				  <input type="radio" id="option-28" name="answer" value="a28">
+				  Empathize with the campers feelings	
+			</label>
+				<input id="next-button" type="button" value="Next" onclick="validateAnswer7()">
+		</fieldset>
+		
+		<fieldset class="question-8">
+			<legend class="q-8">8. Now that you've had some experience with outdoor cooking, which of the following is <b>NOT</b> a 
+			method to evaluate the success of the meal?</legend>
+			<div class="picture-container-8"><img class="image-eight" src="images/quizPic-8.jpg"></div>
+				
+			<label id="a-29" for="option-29">
+				<input type="radio" id="option-29" name="answer" value="a29">
+				Have a menu that everyone will like and be aware of any allergies in your group
+			</label>
+			
+			<label id="a-30" for="option-30">
+				  <input type="radio" id="option-30" name="answer" value="a30" class="correct-8">
+				 Judging the success of the meal by how many times the campers checked their phone while doing the any part of food prep or cooking		
+			</label>
+			
+			<label id="a-31" for="option-31">
+				  <input type="radio" id="option-31" name="answer" value="a31">
+				  Keep the menu simple. Cook hot dog, hamburger, soup, or toast, sandwiches as your first experience	
+			</label>
+			
+			<label id="a-32" for="option-32">
+				  <input type="radio" id="option-32" name="answer" value="a32">
+				  Don't try items that require long and patient tending, or are complex menus for the first experience	
+			</label>
+				<input id="next-button" type="button" value="Next" onclick="validateAnswer8()">
+		</fieldset>
+		
+		<fieldset class="question-9">
+			<legend class="q-9">9. As a counselor, it is your job to follow the camp philosophy. Which of these 
+			is not one of the three philosophies of camping?</legend>
+			<div class="picture-container-9"><img class="image-nine" src="images/quizPic-9.jpg"></div>
+				
+			<label id="a-33" for="option-33">
+				<input type="radio" id="option-33" name="answer" value="a33">
+				Prepare to prevent rather than patch-up!
+			</label>
+			
+			<label id="a-34" for="option-34">
+				  <input type="radio" id="option-34" name="answer" value="a34" class="correct-9 ">
+				 Watch the campers and do what’s right just to earn your pay		
+			</label>
+			
+			<label id="a-35" for="option-35">
+				  <input type="radio" id="option-35" name="answer" value="a35">
+				  Camp is for the Camper, not the Counselor		
+			</label>
+			
+			<label id="a-36" for="option-46">
+				  <input type="radio" id="option-46" name="answer" value="a36">
+				  Supervision is full time responsibility!
+			</label>
+				<input id="next-button" type="button" value="Next" onclick="validateAnswer9()">
+		</fieldset>
+		
+		<fieldset class="question-10">
+			<legend class="q-10">10. You are sitting on the sideline as you are watching the 
+			campers have fun in the activity. One of the campers runs up and asks you about your shoes. 
+			Meaning why is there a twisty tie on it. What do you tell her?</legend>
+				
+			<div class="picture-container-10"><img class="image-ten" src="images/quizPic-10.jpg"></div>
+			<label id="a-37" for="option-37">
+				<input type="radio" id="option-37" name="answer" value="a37">
+				Ignore the question and quickly change the subject
+			</label>
+			
+			<label id="a-38" for="option-38">
+				  <input type="radio" id="option-38" name="answer" value="a38">
+				 Pretend to be preoccupied with something else, avoiding interaction with the child		
+			</label>
+			
+			<label id="a-39" for="option-39">
+				  <input type="radio" id="option-39" name="answer" value="a39"  class="correct-10">
+				  Explain to her that the twisty tie is a symbol of missing someone you know. It could be a family member or friend		
+			</label>
+			
+			<label id="a-40" for="option-40">
+				  <input type="radio" id="option-40" name="answer" value="a40">
+				 Glance at the camper briefly, then resume watching the activity without acknowledging the question
+			</label>
+				<input id="next-button" type="button" value="Next" onclick="validateAnswer10()">
+		</fieldset>
+		<!-- This is the summary of the quiz. Which will display the name of the user and the score they have. -->
+		<fieldset class="summary">
+			<legend class="s-1">Quiz Summary</legend>
+			<p id="final-results"></p>
+			<p id="home-button-hover"><a id="home-button" href="SSSPage.html">Return Home</a></p>
+		</fieldset>
+	</form>
+	
+  <script src="quiz.js"></script></body> 
+  <footer>
+  </footer>
+  
+</html>

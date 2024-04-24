@@ -1,0 +1,575 @@
+/************************************	Body of Site	************************************/
+body, html
+{
+	/*background-image: url('background.jpg');
+	background-size: cover;
+	
+	width: 100%;
+	height: 100%;*/
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	/*font-family: 'Cormorant Garamond';*/
+}
+
+ul 
+{
+	list-style-type: none;
+}
+
+/************************************	Site Logo	************************************/
+.homelogo
+{
+	position: fixed;
+	max-height: 95px;
+	top: 27px;
+	z-index: 4;
+	transition: transform 0.9s;
+}
+
+.homelogo:hover
+{
+	transform: rotate(360deg);
+	/*transform: scale(1.1);*/
+}
+
+/************************************	Site Navigation	************************************/
+nav
+{
+	position: relative;
+	min-height: 120px;
+	z-index: 3;
+	margin-left: 20px;
+	max-width: 425px;
+
+}
+
+/*.hidden {		/*for transition of making nav appear
+  display: none;
+  transition: opacity 3s;
+}*/
+
+nav.sitenavigation a:link, a:visited
+{
+	text-decoration: none;
+	color: black;
+}
+
+nav.sitenavigation li.navlogo
+{
+	position: absolute;
+	margin-top: -4px;
+	margin-left: -30px;
+}
+
+/*.navabout:hover
+{
+	transform: scale(1.1);
+} */
+
+.sitetitle
+{
+	position: fixed;
+	top: 40px;
+	left: 140px;
+	font-size: 55px;
+	font-family: 'Cormorant Garamond';
+}
+
+.transparent-title
+{
+	position: fixed;
+	top: 20px;
+	left: 25px;
+	border-radius: 60px;
+	width: 550px;
+	height: 90px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.7);
+	transition: background-color 0.9s ease;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.transparent-title.scroll-on-top {
+  background-color: rgba(255, 255, 255, 0.93); /* Updated background color */
+}
+
+.transparent-title.scroll-past {
+  background-color: rgba(255, 255, 255, 0.7); /* Original background color */
+}
+
+@media (max-width: 620px)
+{
+	.homelogo
+	{
+		height: 75px;
+	}
+	.transparent-title
+	{
+		height: 70px;
+		width: 375px;
+	}
+	.sitetitle
+	{
+		font-size: 37px;
+		left: 120px;
+	}
+}	
+
+@media (max-width: 450px)
+{
+	.homelogo
+	{
+		height: 75px;
+	}
+	.transparent-title
+	{
+		height: 70px;
+		width: 300px;
+	}
+	.sitetitle
+	{
+		font-size: 28px;
+		left: 120px;
+		padding-top: 10px;
+	}
+}
+
+
+
+/************************************	Background Holder	************************************/
+.image-container {
+  width: 102%;
+  margin-top: -350px;
+  margin-left: -10px;
+  z-index: -1;
+  height: 1150px; /* maybe try 100%*/
+  overflow: hidden; 
+  position: relative;
+}
+
+.backgroundphoto
+{
+	width: 100%; 
+	height: 100%; 
+	object-fit: cover;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	
+	/*centers image as page shrinks*/
+	transform: translate(-50%, -50%); 
+}
+
+@media (max-width: 800px)
+{
+	.image-container
+	{	
+		width: 105%;
+	}
+}
+
+@media (max-width: 300px)
+{
+	.image-container
+	{	
+		width: 108%;
+	}
+}
+
+@media (max-width: 500px)
+{
+	.image-container
+	{	
+		height: 1000px;
+	}
+}
+
+@media (max-width: 375px)
+{
+	.image-container
+	{	
+		height: 1000px;
+	}
+}
+
+/************************************	Scroll Indicator	************************************/
+.arrow-scroll
+{
+  position: relative;
+  height: 4em;
+}
+
+.arrow
+{
+  position: absolute;
+  border: solid white;
+  border-width: 0 10px 10px 0;
+  display: inline-block;
+  padding: 12px;
+  margin-top: 15%;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: 50%;
+  transform:
+    translateX(-50%)
+    rotate(-135deg);
+}
+
+.arrow:nth-child(2)
+{
+  animation:
+    arrow1 1.5s
+    ease-in-out infinite;
+}
+
+.arrow:nth-child(3)
+{
+  animation:
+    arrow2 1.5s
+    ease-in-out infinite;
+}
+
+@keyframes scroll
+{
+  0%
+  {
+    bottom: 80%;
+    opacity: 1;
+  }
+  100%
+  {
+    bottom: 20%;
+    opacity: 0;
+  }
+}
+
+@keyframes arrow1
+{
+  100%
+  {
+   opacity: 0;
+   top: 100%;
+  }
+}
+
+@keyframes arrow2
+{
+  100%
+  {
+   opacity: 0;
+   top: 50%;
+  }
+}
+
+/************************************	Welcome Box	***********************************
+.welcome-container
+{
+	position: absolute;
+	min-height: 400px;
+	min-width: 600px;
+	border-radius: 18px;
+	background-color: white;
+	top: 225px;
+	right: 650px;
+	background-color: rgba(255, 255, 255, 0.7);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	text-align: center; 
+	font-size: 75px;
+}
+.size-manager
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	background-color: lightgray;
+}*/
+
+/************************************	3 Boxes Content	 ************************************/
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  
+  min-height: 300px; 
+}
+
+.box-contents {
+  width: calc(33.33% - 20px);
+  margin: 10px;
+  padding: 20px;
+  height: 250px;
+  box-sizing: border-box;
+}
+
+
+#box1, #box2, #box3 {
+  margin: 10px;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#box1 { margin-right: auto; }
+#box2 { margin: 10px auto; }
+#box3 { margin-left: auto; }
+
+#campicon, #cubeicon, #questionicon 
+{
+	display: block;
+	font-size: 70px;
+	margin-top: 30px;
+	padding-bottom: 25px;
+}
+
+#box1-text, #box2-text, #box3-text {
+	font-size: 25px;
+	margin-top: 15px;
+}
+   
+@media (max-width: 1200px)
+{
+	.arrow
+	{
+		margin-top: 25%;
+	}
+}
+
+@media (max-width: 800px)
+{
+	.box-contents 
+	{
+		width: calc(50% - 20px);
+	}
+	.box-contents 
+	{
+		width: calc(100% - 20px);
+	}
+	.arrow
+	{
+		margin-top: 35%;
+	}
+}
+@media (max-width: 400px)
+{
+	.arrow
+	{
+		margin-top: 45%;
+	}
+}
+
+@media (max-width: 300px)
+{
+	#box1-text, #box2-text, #box3-text
+	{
+		font-size: 15px;
+	}
+
+}
+
+
+
+/************************************	Main Body Content	************************************/
+.maincontent-container
+{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 20px;
+  
+	min-height: 300px;
+	padding-bottom: 35px;
+}
+
+.maincontent {
+  min-height: 200px;
+  width: 100%; /* Set the width to 100% to fill the parent container */
+  border-radius: 12px;
+  background-color: white;
+  justify-content: center;
+  display: flex; /* Use flexbox to center content */
+  align-items: center;
+  text-align: center;
+  
+  
+  
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  margin: 10px auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 25px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+
+.TSSS_Button
+{
+	display: block;
+	text-align: centered;
+	padding-top: 25px;
+}
+
+.SSSBox
+{
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	border-radius: 60px;
+	padding: 20px 25px;
+	text-decoration: none;
+	display: inline-block;
+	
+	
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+}
+
+a.SSSBox:link, 
+a.SSSBox:visited
+{
+	text-decoration: none;
+	color: black;
+}
+
+.SSSBox:hover 
+{
+   -ms-transform: scale(1.1);
+   -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+}
+
+@media (max-width: 400px)
+{
+	.maincontent
+	{
+		font-size: 13px;
+		padding-left: 25px;
+		padding-right: 25px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+}
+
+@media (max-width: 550px)
+{
+	.maincontent
+	{
+		font-size: 13px;
+		padding-left: 25px;
+		padding-right: 25px;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+}
+
+@media (max-width: 550px)
+{
+	.SSSBox
+	{	
+		font-size: 15px;
+	}
+}
+
+/************************************	Footer	************************************/
+footer
+{
+	background-color: rgb(26, 10, 0, 0.7);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	
+	width: 100%;
+	padding: 25px;
+
+	/*margin-top: 200px;
+	margin-left: -10px;
+	margin-bottom: -10px;*/
+	
+	text-align: center;
+	padding-top: 15px;
+	
+}
+.footer-contents
+{
+	
+	font-size: 40px;
+	color: white;
+}
+
+.insta
+{
+	padding-top: 15px;
+	height: 35px;
+}
+
+.facebook
+{
+	padding-left: 10px;
+	height: 35px;
+}
+
+.insta:hover, .facebook:hover
+{
+	transform: scale(1.1);
+}
+
+.aboutus a
+{
+	color: white;
+}
+
+a.aboutus:link, a.aboutus:visited
+{
+	color: white;
+}
+
+.aboutus
+{
+	text-decoration: none;
+	font-size: 35px;
+	cursor: pointer;
+}
+
+@media (max-width: 800px)
+{
+	footer
+	{	
+		width: 105%;
+	}
+}
+
+@media (max-width: 500px)
+{
+	.footer-contents
+	{	
+		font-size:  25px;
+	}
+	.insta, .facebook
+	{	
+		height: 25px;
+	}
+	.aboutus
+	{
+		text-decoration: none;
+		font-size: 20px;
+		cursor: pointer;
+	}
+}
+
+
+/************************************	Scrollbar	************************************/
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+

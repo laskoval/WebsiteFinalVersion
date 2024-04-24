@@ -1,0 +1,465 @@
+body 
+{
+	margin: 0;
+	padding: 0;
+}
+
+/************************************	Background Holder	************************************/
+
+/************************************	Styles The Whole Form	************************************/
+
+form
+{
+	display: flex;
+	/*border: 2px solid red;*/
+	padding: 25px;
+	justify-content: center;
+    align-items: center;
+	object-fit: cover;
+	
+	margin: 5px;
+	height: 100%;
+}
+form .Starter-Page
+{
+	margin-top: 150px;
+}
+
+legend
+{
+	font-size: 25px;
+	padding: 10px;
+	margin-bottom: 25px;
+	color: black;
+	background-color: rgba(255,255,255, 0.9);
+	border-radius: 25px;
+}
+
+fieldset
+{
+	max-width: 80%;
+	border-radius: 12px;
+	border: transparent;
+	text-align: center;
+	
+	background-color: rgba(255,255,255, 0.7);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/*[class^="q-"]:before 	adds in the required  
+{
+	content: "* ";
+	color: red;
+}*/
+
+[id^="a-"]
+{
+	font-size: 20px;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-bottom: 2%;
+}
+
+
+/************************************	Styles Inividual Questions	************************************/
+
+
+/************************************	Startup Page	************************************/
+.Starter-Page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	padding: 50px;
+}
+
+.Starter-Page label
+{
+	margin: 15px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px; /* Adjust as needed */
+}
+
+#form-begin-text
+{
+	padding-bottom: 35px;
+	margin-top: -15px;
+	font-size: 20px;
+}
+
+#name-label
+{
+	font-size: 20px;
+}
+
+#name
+{
+	border-radius: 12px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.button-group
+{
+	gap: 35px;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	margin-top: 40px;
+	margin-bottom: 15px;
+	flex-wrap: wrap;
+}
+
+.button-group a
+{
+	padding: 15px;
+	border-radius: 12px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	border: transparent;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 20px;
+	
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+}
+
+#starter-home-hover 
+{
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+	color: black;
+}
+
+#starter-home-hover:hover
+{
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+#starter-home:link,
+#starter-home:visited {
+   color: black;
+}
+
+#starter-home:focus {
+   color: black;
+}
+
+input#begin-button
+{
+	color: black;
+}
+
+#begin-button
+{
+	margin-bottom: -25px;
+	margin-top: -25px;
+	border-radius: 12px;
+	border: transparent;
+	background-color: rgba(255,255,255, 0.7);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	height: 50px;
+	width: 120px;
+	cursor: pointer;
+	font-size: 20px;
+	
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+}
+
+#begin-button:hover
+{
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+/************************************	Summary Page	************************************/
+
+
+#final-results
+{
+	font-size: 20px;
+	margin-bottom: 60px;
+}
+
+.summary
+{
+	display: none;
+	justify-content: center;
+    align-items: center;
+	text-align: center;
+	height: 100%;
+	width: 60%;
+	
+	left: 150px;
+}
+
+#home-button
+{
+	margin-top: 20px;
+	border-radius: 12px;
+	border: transparent;
+	background-color: rgba(255,255,255, 0.7);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	height: 40px;
+	width: 120px;
+	text-decoration: none;
+	
+	font-size: 20px;
+	padding: 15px;
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+}
+
+#home-button-hover
+{
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+}
+
+#home-button-hover:hover
+{	
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+#home-button:visited {
+   color: black;
+}
+
+#home-button:focus {
+   color: black;
+}
+
+
+/************************************	Response Styles	************************************/
+.Responses
+{
+	text-align: left;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+	border-radius: 12px;
+	padding: 15px;
+	margin: 15px;
+}
+.correct
+{
+	box-shadow: 0px 0px 10px rgba(0,128,0, 0.7);
+}
+
+.incorrect
+{
+	box-shadow: 0px 0px 10px rgba(255,0,0, 0.7);
+}
+
+.title
+{
+	margin-top: 15px;
+}
+
+
+/************************************	Question Styles	************************************/
+[class^="question-"] /*.summary*/
+{
+	display: none;
+	justify-content: center;
+    align-items: center;
+	
+	height: 100%;
+	width: 110%;
+	
+	left: 150px;
+}
+
+[id^="a-"] /* aligns answers inside of each field */
+{
+	display: block;
+	text-align: left;
+}
+
+input#next-button
+{
+	color: black;
+}
+
+#next-button 
+{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	border-radius: 12px;
+	border: transparent;
+	background-color: rgba(255,255,255, 0.7);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+	height: 40px;
+	width: 80px;
+	cursor: pointer;
+	font-size: 20px;
+	
+	-webkit-transition-duration: 0.2s;
+	transition-duration: 0.2s;
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+}
+
+#next-button:hover
+{
+	-ms-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+@media screen and (max-width: 750px) {
+	
+	#form-begin-text
+	{
+		font-size: 90%;
+	}
+	
+	.Starter-Page
+	{
+		padding: 25px;
+	}
+	
+	#name-label
+	{
+	  font-size: 15px; 
+	  margin-left: 10%;
+	}
+	
+	form .Starter-Page
+	{
+		margin-top: 35%;
+	}	
+	
+	form
+	{
+		/*margin-top: 35%;*/
+		margin-left: -10px;
+		margin-right: -10px;
+	}
+	
+	#name 
+	{
+	  width: 80%; 
+	  font-size: 15px;
+	}
+	
+	/*#begin-button
+	{
+		width: 120px;
+		height: 50px;
+		margin-top: 1px;
+		margin-bottom: 0;
+	}
+	
+	.button-group a
+	{
+		font-size: 18px;
+	}
+	
+	#starter-home 
+	{
+		width: 80px;
+		height: 30px;
+	}*/
+	
+	.summary
+	{
+		width: 80%;
+	}
+	
+	.s-1
+	{
+		font-size: 30px;
+	}
+	
+	[class^="q-"]
+	{
+		font-size: 15px;
+	}
+	
+	[id^="a-"]
+	{
+		font-size: 15px;
+		padding-bottom: 15px;
+	}
+}
+@media screen and (max-width: 400px) {
+	legend
+	{
+		font-size: 20px;
+	}
+	/*.button-group
+	{
+		gap: 20px;
+	}*/
+
+}
+/************************************	Image Styles	************************************/
+[class^="picture-container-"]
+/*.picture-container-1*/
+{
+	width: 40%;
+	height: 50%;
+	margin-left: 25%;
+	margin-bottom: 10px;
+}
+[class^="picture-container-"] img
+/*.picture-container-1 img*/
+{
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+	border-radius: 12px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 1000px) {
+	/*.picture-container-1*/
+	[class^="picture-container-"]
+	{
+		width: 60%;
+		height: 70%;
+		margin-left: 20%;
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	/*.picture-container-1*/
+	[class^="picture-container-"]
+	{
+		width: 60%;
+		height: 70%;
+		margin-left: 20%;
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	/*.picture-container-1*/
+	[class^="picture-container-"]
+	{
+		width: 80%;
+		height: 70%;
+		margin-left: 10%;
+	}
+}

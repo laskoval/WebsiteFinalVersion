@@ -1,0 +1,163 @@
+<!--Some recommendations for the future developers:
+*Ensure the website is fully responsive across various devices and screen sizes such as mobile devices, tablets, and desktops.
+*Consider to host the website and use the API for displaying google maps
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Stream Society</title>
+	<link rel="icon" href="images/logoSSS.png" type="image/png">
+	<link rel="stylesheet" href="SSSstyles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+ 
+<header> <!-- Logo and navigation menu -->
+    <div class="logo"> 
+        <a href="SSSPage.html"><img src="images/logoSSS.png" alt="Logo"></a>
+    </div>
+	
+    <nav class="sitenavigation">
+		<div class="menu-icon">
+			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
+		</div>
+        <ul class="navoptions">
+            <li class="Home"><a href="SSSPage.html">HOME</a></li>
+            <li class="Gallery"><a href="galleryPage.html">GALLERY</a></li>
+            <li class="Quiz"><a href="quiz.html">STAFF QUIZ</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- Image container with background photo and text -->
+<div class="image-container">
+	<img class="backgroundphoto" src="images/backgroundImage-1.jpg">
+	<div class="picture-text">
+        <h2>The Small Stream Society</h2>
+        <p><!--Located just 40 miles from Toledo, our Christian camp is the perfect place for kids to have 
+		a blast and grow spiritually. 
+		Surrounded by nature, we offer fun activities and learning experiences. 
+		From games to learning about Christianity, your child will have a great time while making new friends. 
+		Our caring staff ensures a safe and enjoyable experience for every child. 
+		Join us for an adventure-faith journey!-->
+		Located just 40 miles from Glass City, our Christian camp is an amazing 
+		place for kids to have a blast and grow spiritually. Surrounded by nature, 
+		we offer inspiring activities and experiences to deepen faith while learning about 
+		Christian community. From games to learning skills that will help back “in real life,” 
+		your camper will have a great time while making new friends. Our caring staff ensures a safe 
+		and enjoyable experience for every camper, whether child, youth, or adult. Join us for an adventurous 
+		faith journey!
+		</p>
+        <div class="view-model-button"><a>VIEW MAP</a></div>
+		<div class="background-blocker">
+			<div class="view-map">
+			<button class="close">X</button>
+			<div id="map"></div></div>
+		</div>
+	</div>
+</div>
+
+
+	<!-- Contact information and social media links -->
+
+<footer>
+	<div class="contact-info">
+     <div class="horizontal-line1"> </div>
+		<a href="https://www.instagram.com/"><img class="insta" src="images/insta.png"></img></a>
+		<a href="https://www.facebook.com/"><img class="facebook" src="images/facebookLogo.png"></img></a>
+		<div class="contact"> <i class="fa fa-phone" style="font-size:22px;color: black"></i>Phone </button>: 419-308-5678 </div>
+		<div class="contact">  <span class="glyphicon">&#x2709;</span> Email </button>: jeffridenour@outlook.com </div>
+      <div class="horizontal-line2"> </div>
+    </div>
+</footer>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script>
+//part of google maps
+(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+        ({key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg", v: "weekly"});</script>
+
+<script>
+/************************************	Menu Icon Animation	***********************************/
+	const menuIcon = document.querySelector('.menu-icon');
+	const navLinks = document.querySelector('.navoptions');
+	const body = document.querySelector('body');
+
+	menuIcon.addEventListener('click', () => {
+	  navLinks.classList.toggle('active');
+	  menuIcon.classList.toggle('active'); // Toggle active class for icon animation
+	  
+	  // Toggle freeze-scroll class on body
+	  body.classList.toggle('freeze-scroll');
+	});
+	
+/************************************	Google Map Background Container	***********************************/
+	$('.view-model-button').click(function() {
+        //$(this).hide(); // Hide transparent background
+        $('.view-map').addClass('active'); // Show active view
+        $('.background-blocker').addClass('active'); // Show active view
+		$('body').addClass('freeze-scroll');
+    });
+
+    $('.close').click(function() {
+        $('.view-model-button').show(); // Show transparent background
+        $('.view-map').removeClass('active'); // Hide active view
+        $('.background-blocker').removeClass('active'); // Hide active view
+		$('body').removeClass('freeze-scroll');
+    });
+	
+	
+/************************************	Google Map	***********************************/
+
+	let map;
+
+	async function initMap() {
+
+	  const position = { lat: 41.42465086527561, lng: -83.94132399007212 };
+
+	  const { Map } = await google.maps.importLibrary("maps");
+	  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+
+	  map = new Map(document.getElementById("map"), {
+		zoom: 18,
+		center: position,
+		mapTypeId: "satellite",
+		mapId: "DEMO_MAP_ID",
+	  });
+
+
+	  const marker = new AdvancedMarkerElement({
+		map: map,
+		position: position,
+		title: "Uluru",
+	  });
+	}
+
+	initMap();
+	
+	
+	/************************************	Google Map error message	**********************************
+	function initMap() {
+            var mapOptions = {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+            };
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        }
+
+        google.maps.event.addDomListener(window, 'load', function() {
+            if (typeof google === 'undefined' || typeof google.maps === 'undefined') {
+                // Google Maps API failed to load
+                document.getElementById('map').innerHTML = 'Error loading Google Maps. Please try again later.';
+            }
+        });*/
+</script>
+</html>

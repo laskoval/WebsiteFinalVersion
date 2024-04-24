@@ -1,0 +1,79 @@
+[class^="team-container-"]
+{
+	margin: 35px 25px 35px 25px; /* Top, Right, Bottom, Left*/
+	
+}
+
+[class^="member-"]
+{
+	display: flex;
+	height: 250px;
+	margin: 25px;
+	justify-content: center;
+	flex-wrap: wrap;
+	border-radius: 12px;
+	gap: 10px;
+}
+
+[class^="picture-holder-"]
+{
+	margin: 20px;
+	height: auto;
+	width: 150px;
+	border-radius: 12px;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+[class^="image-"]
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 12px;
+}
+
+[class^="description-container-"]
+{
+	margin: 20px;
+	height: 80%;
+	width: 33%;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 12px;
+}
+
+[id^="title-"]
+{
+	font-size: 30px;
+}
+
+[id^="description-"]
+{
+	padding: 0px 15px 0px 15px;
+	font-size: 16px;
+}
+
+[class^="title-"]
+{
+	text-align: center;
+	font-size: 50px;
+}
+
+.team-container-4
+{
+	margin-top: 95px;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    [class^="member-"] {
+        height: auto; /* Remove fixed height */
+        flex-direction: column;
+		align-items: center;
+		justify-content: center;
+    }
+
+    [class^="description-container-"]{
+        width: 90%; /* Adjust width to full for stacking */
+        margin: 25px 15px 30px 15px; /* Adjust margin for stacking */
+    }
+}

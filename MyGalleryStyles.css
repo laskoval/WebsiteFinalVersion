@@ -1,0 +1,352 @@
+/************************************	Gallery Styles	************************************/
+
+.gallery-container
+{
+	display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+/*
+.transparent-one,
+.transparent-two,
+.transparent-three,
+.transparent-four,
+.transparent-five,
+.transparent-six,
+.transparent-seven,
+.transparent-eight,
+.transparent-nine,
+.transparent-ten,
+.transparent-eleven,
+.transparent-twelve,
+.transparent-thirteen,
+.transparent-fourteen,
+.transparent-fifthteen,
+.transparent-sixteen,
+.transparent-seventeen,
+.transparent-eightteen,
+.transparent-nineteen,
+.transparent-twenty */
+div[class^="transparent-"]
+{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+	border-radius: 12px;
+}
+
+/*
+.transparent-one a, 
+.transparent-two a,
+.transparent-three a,
+.transparent-four a,
+.transparent-five a,
+.transparent-six a,
+.transparent-seven a,
+.transparent-eight a,
+.transparent-nine a,
+.transparent-ten a,
+.transparent-eleven a,
+.transparent-twelve a,
+.transparent-thirteen a,
+.transparent-fourteen a,
+.transparent-fifthteen a,
+.transparent-sixteen a,
+.transparent-seventeen a,
+.transparent-eightteen a,
+.transparent-nineteen a,
+.transparent-twenty a */
+div[class^="transparent-"] a
+{
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+
+/************************************	Fitting pictures into containers	************************************
+
+.photo-container-one,
+.photo-container-two,
+.photo-container-three,
+.photo-container-four,
+.photo-container-five,
+.photo-container-six,
+.photo-container-seven,
+.photo-container-eight,
+.photo-container-nine,
+.photo-container-ten,
+.photo-container-eleven,
+.photo-container-twelve,
+.photo-container-thirteen,
+.photo-container-fourteen,
+.photo-container-fifthteen,
+.photo-container-sixteen,
+.photo-container-seventeen,
+.photo-container-eightteen,
+.photo-container-nineteen,
+.photo-container-twenty*/
+
+div[class^="photo-container-"]
+{
+	position: relative;
+	display: flex;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 12px;
+}
+
+/*
+.photo-container-one img,
+.photo-container-two img,
+.photo-container-three img,
+.photo-container-four img,
+.photo-container-five img,
+.photo-container-six img,
+.photo-container-seven img,
+.photo-container-eight img,
+.photo-container-nine img,
+.photo-container-ten img,
+.photo-container-eleven img,
+.photo-container-twelve img,
+.photo-container-thirteen img,
+.photo-container-fourteen img,
+.photo-container-fifthteen img,
+.photo-container-sixteen img,
+.photo-container-seventeen img,
+.photo-container-eightteen img,
+.photo-container-nineteen img,
+.photo-container-twenty img*/
+div[class^="photo-container-"] img
+{
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
+	border-radius: 12px;
+}
+
+
+/************************************	hover to view	***********************************
+
+.photo-container-one:hover .transparent-one,
+.photo-container-two:hover .transparent-two, 
+.photo-container-three:hover .transparent-three, 
+.photo-container-four:hover .transparent-four, 
+.photo-container-five:hover .transparent-five, 
+.photo-container-six:hover .transparent-six, 
+.photo-container-seven:hover .transparent-seven, 
+.photo-container-eight:hover .transparent-eight,
+.photo-container-nine:hover .transparent-nine, 
+.photo-container-ten:hover .transparent-ten, 
+.photo-container-eleven:hover .transparent-eleven, 
+.photo-container-twelve:hover .transparent-twelve, 
+.photo-container-thirteen:hover .transparent-thirteen, 
+.photo-container-fourteen:hover .transparent-fourteen, 
+.photo-container-fifthteen:hover .transparent-fifthteen, 
+.photo-container-sixteen:hover .transparent-sixteen, 
+.photo-container-seventeen:hover .transparent-seventeen, 
+.photo-container-eightteen:hover .transparent-eightteen, 
+.photo-container-nineteen:hover .transparent-nineteen, 
+.photo-container-twenty:hover .transparent-twenty*/
+div[class^="photo-container-"]:hover div[class^="transparent-"]
+{
+	opacity: 1;
+	cursor: pointer;
+	border-radius: 12px;
+}
+
+@media (max-width: 1300px) {
+  div[class^="transparent-"] {
+    display: none;
+  }
+}
+
+/************************************	Viewing Photo	***********************************
+
+.gallery-container.active-view-one,
+.gallery-container.active-view-two,
+.gallery-container.active-view-three,
+.gallery-container.active-view-four,
+.gallery-container.active-view-five,
+.gallery-container.active-view-six,
+.gallery-container.active-view-seven,
+.gallery-container.active-view-eight,
+.gallery-container.active-view-nine,
+.gallery-container.active-view-ten,
+.gallery-container.active-view-eleven,
+.gallery-container.active-view-twelve,
+.gallery-container.active-view-thirteen,
+.gallery-container.active-view-fourteen,
+.gallery-container.active-view-fifthteen,
+.gallery-container.active-view-sixteen,
+.gallery-container.active-view-seventeen,
+.gallery-container.active-view-eightteen,
+.gallery-container.active-view-nineteen,
+.gallery-container.active-view-twenty
+.gallery-container [class^="photo-container-"] div[class^="active-view-"]
+{
+	width: 100%;
+	height: 100%;
+	z-index: 500;
+}*/
+
+/*
+.active-view-one, 
+.active-view-two,
+.active-view-three,
+.active-view-four,
+.active-view-five,
+.active-view-six,
+.active-view-seven,
+.active-view-eight,
+.active-view-nine,
+.active-view-ten,
+.active-view-eleven,
+.active-view-twelve,
+.active-view-thirteen,
+.active-view-fourteen,
+.active-view-fifthteen,
+.active-view-sixteen,
+.active-view-seventeen,
+.active-view-eightteen,
+.active-view-nineteen,
+.active-view-twenty*/
+div[class^="active-view-"]
+{
+    position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	border-radius: 12px;
+    padding: 20px;
+    display: none;
+    z-index: 2;
+	
+}
+
+/*
+.active-view-one.active, 
+.active-view-two.active, 
+.active-view-three.active,
+.active-view-four.active,
+.active-view-five.active,
+.active-view-six.active,
+.active-view-seven.active,
+.active-view-eight.active,
+.active-view-nine.active,
+.active-view-ten.active,
+.active-view-eleven.active,
+.active-view-twelve.active,
+.active-view-thirteen.active,
+.active-view-fourteen.active,
+.active-view-fifthteen.active,
+.active-view-sixteen.active,
+.active-view-seventeen.active,
+.active-view-eightteen.active,
+.active-view-nineteen.active,
+.active-view-twenty.active*/
+div[class^="active-view-"].active
+{
+    display: block; /* Show when active */
+	
+}
+
+
+/*
+.active-view-one.active img, 
+.active-view-two.active img, 
+.active-view-three.active img,
+.active-view-four.active img,
+.active-view-five.active img,
+.active-view-six.active img,
+.active-view-seven.active img,
+.active-view-eight.active img,
+.active-view-nine.active img,
+.active-view-ten.active img,
+.active-view-eleven.active img,
+.active-view-twelve.active img,
+.active-view-thirteen.active img,
+.active-view-fourteen.active img,
+.active-view-fifthteen.active img,
+.active-view-sixteen.active img,
+.active-view-seventeen.active img,
+.active-view-eightteen.active img,
+.active-view-nineteen.active img,
+.active-view-twenty.active img*/
+div[class^="active-view-"].active img
+{
+	max-height: 800px;
+	min-height: 600px;
+	
+}
+
+@media (max-width: 1500px) 
+{
+    /*.active-view-one.active img, 
+	.active-view-two.active img, 
+	.active-view-three.active img,
+	.active-view-four.active img,
+	.active-view-five.active img,
+	.active-view-six.active img,
+	.active-view-seven.active img,
+	.active-view-eight.active img,
+	.active-view-nine.active img,
+	.active-view-ten.active img,
+	.active-view-eleven.active img,
+	.active-view-twelve.active img,
+	.active-view-thirteen.active img,
+	.active-view-fourteen.active img,
+	.active-view-fifthteen.active img,
+	.active-view-sixteen.active img,
+	.active-view-seventeen.active img,
+	.active-view-eightteen.active img,
+	.active-view-nineteen.active img,
+	.active-view-twenty.active img */
+	div[class^="active-view-"].active img	
+	{
+		max-height: 700px;
+    }
+}
+/************************************	Close Button	***********************************/
+
+.close
+{
+	position: absolute;
+	top: 25px;
+	right: 25px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 10px;
+	font-size: 25px;
+	padding: 5px 10px;
+	color: white;
+	
+	border: transparent;
+	background-color: rgba(0,0,0, 0.7);
+}
+
+.close:hover
+{
+	color: white;
+	background-color: red;
+	border: transparent;
+}
+
+/*	When map is active, blocks scrolling	*/
+body.freeze-scroll {	
+  overflow: hidden;
+}
